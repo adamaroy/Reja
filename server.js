@@ -26,7 +26,7 @@ app.get("/",function (req, res) {    //get databasedan malumot olib oqish uchun 
     res.render ("harid");
 });
 
-
+//hello
 // app.get("/hello",function(req ,res){
 //     res.end("<h1>Hello world by Adam!</h1>");
 // });
