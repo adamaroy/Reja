@@ -1,0 +1,219 @@
+
+.frame {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background: #e5e5e5;
+  }
+  
+  .main_frame {
+    position: relative;
+    width: 1440px;
+    height: 1312px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 2px;
+    background: #f7f6b9;
+  }
+
+  
+  .main_frame .left_frame {
+    position: relative;
+    width: 305px;
+    height: 1315px;
+    display: flex;  
+    flex-direction: column; 
+    background-color: rgb(255, 255, 255);
+    
+  }
+  
+  .main_frame .midd_frame {
+    position: relative;
+    width: 970px;
+    height: 1259px;
+    margin-left: 30px;
+    margin-right: 27px;
+    display: flex;  
+    flex-direction: column; 
+    background-color: rgb(207, 40, 90);  
+  }
+
+  .main_frame .right_frame {
+    position: relative;
+    width: 108px;
+    height: 1315px;
+    background-color: white;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    
+  }
+  
+  .main_frame .left_frame .left_1 {
+    position: relative;
+    width: 228px;
+    height: 267px;
+    margin-top: 50px;
+    margin-left: 37px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  .main_frame .left_1_1 {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 156.16px;
+    height: 142.53px;
+    margin-bottom: 29.46px;
+  }
+  .main_frame .marginer {
+    position: relative;
+    width: 220px;
+    height: 0px;
+    margin-left: 40px;
+    margin-bottom: 25px;
+    margin-top: 39px;
+  
+    /* Background */
+    border: 1.5px solid #f0f0f6;
+  }
+
+  .main_frame .left_frame .left_2 {
+    position: relative;
+    width: 221px;
+    height: 126px;
+    margin-left: 44px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  
+
+  }
+  .main_frame .left_frame .left_1_2 {
+    position: relative;
+    width: 66.63px;
+    height: 20.9px;
+    margin-bottom: 6.65px;
+    /* H4 18px */
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 123.6%;
+    /* or 22px */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    /* Black */
+    color: #2B2B2B;
+  }
+
+  .main_frame .left_frame .left_3 {
+    position: relative;
+    width: 220px;
+    height: 153px;
+    margin-left: 45px;
+    background-color: aqua;
+  }
+  .main_frame .left_frame .left_4 {
+    position: relative;
+    width: 220px;
+    height: 252px;
+    margin-left: 45px;
+    background-color: aqua;
+  }
+  .main_frame .left_frame .left_5 {
+    position: relative;
+    width: 186px;
+    height: 148px;
+    margin-left: 45px;
+    background-color: aqua;
+  }
+  .main_frame .left_frame .link_href {
+  text-decoration: none;
+  color: black;
+  }
+  
+  .main_frame .left_frame .left_icons {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 238px;
+    margin-top: 19px;
+  }
+
+  .main_frame .left_frame .icon {
+    position: relative;
+    width: 24.986px;
+    height: 21.609px;
+    border-radius: 50%;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+    background: #ffb400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .main_frame .left_frame .icon-1 {
+    /*display: flex;*/
+    /*position: relative;*/
+    left: 27.17%;
+    right: 27.08%;
+    /*margin-top: 5.86px;*/
+  }
+
+  .left_2 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Adjust the space between each row */
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.label {
+    background-color: #FFA500; 
+    color: white;
+    text-align: center;
+    margin-right: 10px;
+    color: var(--Black, #2B2B2B);
+    font-kerning: none;
+    font-feature-settings: 'calt' off;
+    padding:auto;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; 
+    text-transform: capitalize;
+    display:f
+    flex-direction: row;
+    justify-content: space-between;
+      
+}
+
+.value-age {
+    margin-right: 37px;
+    margin-left:50px ;
+    display: flex;
+    
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.value.available {
+    color: green;
+}

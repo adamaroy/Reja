@@ -43,6 +43,9 @@ app.get("/",function (req, res) {    //get databasedan malumot olib oqish uchun 
 app.get('/author',(req,res)=>{
     res.render ("author",{user: user});
 });
+// app.get('/author2',(req,res)=>{
+//     res.render ("author2",{user: user});
+// });
 
 //hello
 // app.get("/hello",function(req ,res){
