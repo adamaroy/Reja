@@ -963,7 +963,12 @@
   left: 209.4px;
 }
 .dribbble-icon {
-  left: 250px;
+  left: 240px;
+  height: 28px;
+  width: 40px;
+  box-shadow:none;
+
+  
 }
 .tech-item {
   height: 1315px;
@@ -2136,10 +2141,10 @@
   justify-content: flex-start;
 }
 .advertising {
-  flex: 1;
+  flex: 0.89;
   background-color: var(--white);
   flex-direction: column;
-  padding: 31px var(--padding-6xl) var(--padding-6xl);
+  padding: 30px var(--padding-6xl) var(--padding-6xl);
   box-sizing: border-box;
   gap: var(--gap-3xl);
   min-width: 232px;
@@ -2147,9 +2152,10 @@
 .game-design-parent {
   align-self: stretch;
   flex-direction: row;
-  padding: 0 var(--padding-8xs) 0 0;
+  padding:0 var(--padding-15xs) 0 0;
   gap: var(--gap-xl);
   font-size: var(--h4-18-size);
+  
 }
 .image-container,
 .image-container-wrapper {
