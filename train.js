@@ -1,82 +1,100 @@
-// B TASK
-console.log("WEb serverini boshlash");
-const express =require("express");
+console.log("Jack Ma maslahatlari");
 
-const app = express();
-const http = require('http');
+const list = [
+    "yaxshi talaba boling!",  // 0-20
+    "Togri boshliq tanlang!", // 20-30
+    "Ozingizga ishlashni boshlang!", //30-40
+    "siz kuchli bolgan narsalarni qiling", //40-50
+    "yoshlarga invest qiling!", //50-60
+    "endi dam oling!" //60~
+];
+//SYNCHRONOUS FUNCTION
 
-//1 : KIRISH CODELARI
-app.use(express.static("public"));                  //kirib kelayotgan har bir request uchun public folder ochiq
-app.use(express.json());
-app.use(express.urlencoded({extended: true}));      //formdan biror narsa post qilsa express server qabul qiladi (yozilmasa express ignore qiladi)
+function maslahatBering(a, callback) {
+    if (typeof a !== 'number') callback("Insert number!", null);
+    else if (a <= 20) callback(null, list[0]);
+    else if (a > 20 && a <= 30) callback(null, list[1]);
+    else if (a > 30 && a <= 40) callback(null, list[2]);
+    else if (a > 40 && a <= 50) callback(null, list[3]);
+    else if (a > 50 && a <= 60) callback(null, list[4]);
+    else {
+        setInterval(function() {
+        // setTimeout(function() {
+            callback(null,list[5]);
+        }, 5000);
+        
+    }
+}
+console.log('passed here 0');
 
-//2 :Session ga bogliq codelar
-
-//3: Views ga bogliq codelar
-app.set("views","views");
-app.set("view engine","ejs");                       //ejs orqali HTML frontend yasaladi backend ichida
-
-//4:Routinga bogliq codelar
-app.post("/create-item",(req,res)=> {   //post databasega malumotni ozi bilan olib kelib va db ga yozadi
-console.log(req.body);
-res.json({test:"succes"});
+maslahatBering(85, (err, data) => {
+    if (err) console.log("ERROR:", err);
+    else{
+    console.log('javob:', data);
+    }
 
 });
+console.log('passed here 1');
+//ASYNCHRONOUS FUNCTION
 
-app.get("/",function (req, res) {    //get databasedan malumot olib oqish uchun ishlatadi
-    res.render ("harid");
-});
+// async function maslahatBering(a) {
+//     if (typeof a !== 'number') throw new Error("Insert number!");
+//     else if (a <= 20) return list[0];
+//     else if (a > 20 && a <= 30) return list[1];
+//     else if (a > 30 && a <= 40) return list[2];
+//     else if (a > 40 && a <= 50) return list[3];
+//     else if (a > 50 && a <= 60) return list[4];
+//     else {
 
+//         return new Promise((resolve,reject)=>{
+//             // setInterval(()=>{
+//             setTimeout(()=>{
+//                 resolve(list[5]);
+//             },1000);
+//         });
+        // return list[5];
 
-// app.get("/hello",function(req ,res){
-//     res.end("<h1>Hello world by Adam!</h1>");
-// });
-// app.get("/gift",function(req ,res){
-//     res.end("<h1>GIFT!</h1>");
-// });
+        // setTimeout(function() {
+        //     return list[5];
+        // }, 5000);
+        
+//     }
+// }
 
+// then catch methodlari!
 
-const server = http.createServer(app);
-let PORT =3000;
-server.listen(PORT,function(){
-    console.log(`the server is running successfully on port : ${PORT}`);
-    
-})
+// console.log('passed here 0');
 
-
-
-// A TASK
-
-
-// console.log("WEb serverini boshlash");
-// const express =require("express");
-
-// const app = express();
-// const http = require('http');
-
-// //1 : KIRISH CODELARI
-// app.use(express.static("public"));                  //kirib kelayotgan har bir request uchun public folder ochiq
-// app.use(express.json());
-// app.use(express.urlencoded({extended: true}));      //formdan biror narsa post qilsa express server qabul qiladi (yozilmasa express ignore qiladi)
-
-// //2 :Session ga bogliq codelar
-
-// //3: Views ga bogliq codelar
-// app.set("views","views");
-// app.set("view engine","ejs");                       //ejs orqali HTML frontend yasaladi backend ichida
-
-// //4:Routinga bogliq codelar
-// app.get("/hello",function(req ,res){
-//     res.end("<h1>Hello world by Adam!</h1>");
-// });
-// app.get("/gift",function(req ,res){
-//     res.end("<h1>GIFT!</h1>");
-// });
-
-
-// const server = http.createServer(app);
-// let PORT =3000;
-// server.listen(PORT,function(){
-//     console.log(`the server is running successfully on port : ${PORT}`);
+// maslahatBering(25).then(data => {
+//     console.log('javob:',data);
+// }).catch(err => {
+//     console.log("ERROR",err);
     
 // })
+// console.log('passed here 1');
+
+// async function run(){
+//     let javob = await maslahatBering(70);
+//     console.log(javob);
+//     javob = await maslahatBering(31);
+//     console.log(javob);
+//     javob = await maslahatBering(41);
+//     console.log(javob);
+//     javob = await maslahatBering(51);
+//     console.log(javob);
+//     javob = await maslahatBering(20);
+//     console.log(javob);
+//  }
+
+// run();
+
+
+
+//SAVOL NEGA 0 va 1 ni oqigandan keyin javobni olyapti?Tushunmadim!
+
+//ASYNCHRONOUS FUNCTION da avval synchronous function ishga tyushib bolgan asynchronous function natijalari ishlay boshlaydi!
+//SHU sabab EVENT LOOP orqali THREAD POOLGA TASHLAB YUBORADI//SINGLE THREEDNI BAND QILMAYDI!!
+
+//SYNCHRONOUS FUNCTION: filesystem,readfile ...
+//Sync = Synchronous = Blocking I/O model
+//Async = Asynchronous = Non-blocking I/O model
