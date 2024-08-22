@@ -23,26 +23,29 @@ app.use(express.urlencoded({extended: true}));      //formdan biror narsa post q
 //2 :Session ga bogliq codelar
 
 //3: Views ga bogliq codelar
-app.set("views","views");
-app.set("view engine","ejs");                       //ejs orqali HTML frontend yasaladi backend ichida
+app.set("views","views");               //views folderdan viewsni qidiradi
+
+app.set("view engine","ejs");           //view engineda ejs ishlat buyrugi!     //ejs orqali HTML frontend yasaladi backend ichida
 
 
 
 
 //4:Routinga bogliq codelar
-app.post("/create-item",(req,res)=> {   //post databasega malumotni ozi bilan olib kelib va db ga yozadi
+app.post("/create-item",(req,res)=> {   //post databasega malumotni jonatadi va db ga yozadi
 console.log(req.body);
 res.json({test:"succes"});
 
 });
 
 app.get("/",function (req, res) {    //get databasedan malumot olib oqish uchun ishlatadi
-    res.render ("harid");
+    res.render ("reja");
 });
 
 app.get('/author',(req,res)=>{
     res.render ("author",{user: user});
 });
+
+
 // app.get('/author2',(req,res)=>{
 //     res.render ("author2",{user: user});
 // });
@@ -59,6 +62,6 @@ app.get('/author',(req,res)=>{
 const server = http.createServer(app);
 let PORT =3000;
 server.listen(PORT,function(){
-    console.log(`the server is running successfully on port : ${PORT}`);
+    console.log(`the server is running successfully on port : ${PORT}, http://localhost:${PORT}`);
     
 })
