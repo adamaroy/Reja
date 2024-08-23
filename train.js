@@ -1,17 +1,35 @@
-// A TASK
-function countLetterOccurrences(letter, word) {
-    let count = 0;
-    for (let i = 0; i < word.length; i++) {
-        if (word[i] === letter) {
-            count++;
+//B TASK
+function countDigits(str) {
+        let count = 0;
+        for (let i = 0; i < str.length; i++) {
+            if (!isNaN(str[i]) && str[i] !== ' ') {
+                count++;
+            }
         }
+        return count;
     }
-    return count;
-}
+    
+    // Example usage:
+    let result = countDigits("ad2a54y79wet0sfgb9");
+    console.log(result); 
+    
 
 
-const letterNumber = countLetterOccurrences("a", "adam");
-console.log("letter num:",letterNumber);  
+
+// A TASK
+// function countLetterOccurrences(letter, word) {
+//     let count = 0;
+//     for (let i = 0; i < word.length; i++) {
+//         if (word[i] === letter) {
+//             count++;
+//         }
+//     }
+//     return count;
+// }
+
+
+// const letterNumber = countLetterOccurrences("a", "adam");
+// console.log("letter num:",letterNumber);  
 
 
 
@@ -121,3 +139,7 @@ console.log("letter num:",letterNumber);
 //SYNCHRONOUS FUNCTION: filesystem,readfile ...
 //Sync = Synchronous = Blocking I/O model
 //Async = Asynchronous = Non-blocking I/O model
+
+
+
+
