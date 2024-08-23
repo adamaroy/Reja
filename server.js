@@ -2,7 +2,7 @@ const http = require('http');
 const mongodb = require('mongodb').MongoClient;
 
 let db;
-const connectionString = "mongodb+srv://uzscooleducation:Chuncheon1)@cluster0.newpn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+const connectionString = "mongodb+srv://uzscooleducation:Chuncheon1)@cluster0.newpn.mongodb.net/REJA?retryWrites=true&w=majority&appName=Cluster0"
 
 mongodb.connect(connectionString, 
     {

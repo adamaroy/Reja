@@ -37,16 +37,38 @@ app.set("view engine","ejs");           //view engineda ejs ishlat buyrugi!     
 //4:Routinga bogliq codelar
 app.post("/create-item",(req,res)=> {   //post databasega malumotni jonatadi va db ga yozadi
 console.log(req.body);
-res.json({test:"succes"});
+// res.end("succes");
+console.log("user entered /create-item");
+const new_reja =req.body.reja;
+db.collection("plans").insertOne({reja:new_reja},(err,data)=> {
+    if(err){
+        console.log(err);
+        res.end('something went wrong');
+    }else{
+        res.end('successfully added');
+    }
+});
 
 });
 
 app.get("/",function (req, res) {    //get databasedan malumot olib oqish uchun ishlatadi
-    res.render ("reja");
+    console.log("user entered /");
+    
+    db.collection("plans").find().toArray((err,data) => {
+      if(err){
+        console.log(err);
+        res.end("something went wrong");
+      }  else{
+        // console.log(data);
+        res.render("reja",{items: data});
+        
+      }
+    });
+  
 });
 
 app.get('/author',(req,res)=>{
-    res.render ("author",{user: user});
+    res.render("author",{user: user});
 });
 
 
