@@ -6,15 +6,15 @@ const connectionString = "mongodb+srv://uzscooleducation:Chuncheon1)@cluster0.ne
 
 mongodb.connect(connectionString, 
     {
-    useNewUrlParser: true,   // Corrected typo here
+    useNewUrlParser: true,   
     useUnifiedTopology: true,
     },
-(err, client) => {
+(err, data) => {
     if(err) {
         console.log("Error connecting to MongoDB:", err);
     } else {
         console.log("MongoDB connected successfully");
-        module.exports = client;
+        module.exports = data;
         // console.log(client);
         const app = require("./app");
         const server = http.createServer(app);

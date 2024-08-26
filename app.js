@@ -16,6 +16,7 @@ fs.readFile("database/user.json","utf8",(err,data)=> {
 
 //MongoDB chaqirish
 const db =require("./server").db();
+const mongodb =require("mongodb");
 
 
 
@@ -35,20 +36,39 @@ app.set("view engine","ejs");           //view engineda ejs ishlat buyrugi!     
 
 
 //4:Routinga bogliq codelar
+
+
+
 app.post("/create-item",(req,res)=> {   //post databasega malumotni jonatadi va db ga yozadi
 console.log(req.body);
 // res.end("succes");
 console.log("user entered /create-item");
 const new_reja =req.body.reja;
 db.collection("plans").insertOne({reja:new_reja},(err,data)=> {
-    if(err){
-        console.log(err);
-        res.end('something went wrong');
-    }else{
-        res.end('successfully added');
-    }
+  
+    res.json(data?.ops?.[0]);
+
+   
+   
+   
+    // if(err){
+    //     console.log(err);
+    //     res.end('something went wrong');
+    // }else{
+    //     res.json(data?.ops?.[0]);
+      
+    // }
 });
 
+});
+
+app.post("/delete-item",(req,res)=>{
+    const id =req.body.id;
+    db.collection("plans").deleteOne({_id: new mongodb.ObjectId(id)},function(err,data){
+        res.json({state:"Success"});
+    });
+    // console.log(id);
+    // res.end("done");
 });
 
 app.get("/",function (req, res) {    //get databasedan malumot olib oqish uchun ishlatadi

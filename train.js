@@ -1,17 +1,32 @@
+//C TASK
+function haveSameLetters(str1, str2) {
+   
+    const sortString = str => str.split('').sort().join('');
+
+   
+    return sortString(str1) === sortString(str2);
+}
+
+
+const result = haveSameLetters("mitgroup", "gmtiprou");
+console.log(result);  
+
+
+
 //B TASK
-function countDigits(str) {
-        let count = 0;
-        for (let i = 0; i < str.length; i++) {
-            if (!isNaN(str[i]) && str[i] !== ' ') {
-                count++;
-            }
-        }
-        return count;
-    }
+// function countDigits(str) {
+//         let count = 0;
+//         for (let i = 0; i < str.length; i++) {
+//             if (!isNaN(str[i]) && str[i] !== ' ') {
+//                 count++;
+//             }
+//         }
+//         return count;
+//     }
     
-    // Example usage:
-    let result = countDigits("ad2a54y79wet0sfgb9");
-    console.log(result); 
+//     // Example usage:
+//     let result = countDigits("ad2a54y79wet0sfgb9");
+//     console.log(result); 
     
 
 
