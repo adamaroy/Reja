@@ -4,15 +4,15 @@
 console.log("FrontEnd JS ishga tushdi");
 
 function itemTemplate(data) {
-    console.log("Creating item template with data:", data); // Debug log
     return `<li class="list-group-item list-group-item-info d-flex align-items-center justify-content-between">
-                <span class="item-text">${data.reja}</span> <!-- Changed 'item' to 'data' -->
+                <span class="item-text">${data.reja}</span>
                 <div>
-                    <button data-id="${data._id}" class="edit-me btn btn-secondary btn-sm mr-1">Ozgartirish</button> <!-- Changed 'item' to 'data' -->
-                    <button data-id="${data._id}" class="delete-me btn btn-danger btn-sm">Ochirish</button> <!-- Changed 'item' to 'data' -->
+                    <button data-id="${data._id}" class="edit-me btn btn-secondary btn-sm mr-1">Ozgartirish</button>
+                    <button data-id="${data._id}" class="delete-me btn btn-danger btn-sm">Ochirish</button>
                 </div>
             </li>`;
 }
+
 
 let createField = document.getElementById("create-field");
 
@@ -33,7 +33,7 @@ document.getElementById("create-form").addEventListener("submit", function (e) {
                 itemTemplate(response.data));
             createField.value = "",
             createField.focus();
-            document.location.reload();
+            // document.location.reload(); //BUG TEMPORARELY FIXED
         })
         .catch((err) => {
             console.error("Error in /create-item:", err); // Debug log

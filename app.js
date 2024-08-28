@@ -34,13 +34,13 @@ app.set("view engine", "ejs"); // view engineda ejs ishlat buyrugi! // ejs orqal
 app.post("/create-item", (req, res) => { // post databasega malumotni jonatadi va db ga yozadi
     console.log("Received data for /create-item:", req.body); // Debug log
     const new_reja = req.body.reja;
-    db.collection("plans").insertOne({ reja: new_reja }, (err, data) => {
+    db.collection("plans").insertOne({ reja: new_reja }, (err, result) => {
         if (err) {
             console.error("Error inserting data into DB:", err); // Debug log
             res.status(500).json({ error: "Failed to insert item" });
         } else {
-            console.log("Data inserted into DB:", data?.ops?.[0]); // Debug log
-            res.json(data?.ops?.[0]);
+            console.log("Data inserted into DB:",result); // Debug log
+            res.json({ _id: result.insertedId, reja: new_reja });
         }
     });
 });
