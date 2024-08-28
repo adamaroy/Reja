@@ -1,15 +1,98 @@
-//C TASK
-function haveSameLetters(str1, str2) {
-   
-    const sortString = str => str.split('').sort().join('');
+//D TASK 
+class Shop {
+    constructor(bread, spaghetti, cocaCola) {
+        this.bread = bread;
+        this.spaghetti = spaghetti;
+        this.cocaCola = cocaCola;
+    }
 
-   
-    return sortString(str1) === sortString(str2);
+    logAction(action) {
+        const now = new Date();
+        const time = now.toTimeString().split(' ')[0]; // Get the time in HH:MM:SS format
+        console.log(`Action: ${action} at ${time}`);
+    }
+
+    residue() {
+        this.logAction('Checking residue');
+        return `Current stock: ${this.bread} bread, ${this.spaghetti} spaghetti, and ${this.cocaCola} Coca-Cola!`;
+    }
+
+    selling(product, quantity) {
+        this.logAction(`Selling ${quantity} ${product}`);
+
+        switch (product.toLowerCase()) {
+            case 'bread':
+                if (this.bread >= quantity) {
+                    this.bread -= quantity;
+                } else {
+                    console.log('Not enough bread in stock!');
+                }
+                break;
+            case 'spaghetti':
+                if (this.spaghetti >= quantity) {
+                    this.spaghetti -= quantity;
+                } else {
+                    console.log('Not enough spaghetti in stock!');
+                }
+                break;
+            case 'coca cola':
+            case 'cola':
+                if (this.cocaCola >= quantity) {
+                    this.cocaCola -= quantity;
+                } else {
+                    console.log('Not enough Coca-Cola in stock!');
+                }
+                break;
+            default:
+                console.log(`Product ${product} not available.`);
+        }
+    }
+
+    receive(product, quantity) {
+        this.logAction(`Receiving ${quantity} ${product}`);
+
+        switch (product.toLowerCase()) {
+            case 'bread':
+                this.bread += quantity;
+                break;
+            case 'spaghetti':
+                this.spaghetti += quantity;
+                break;
+            case 'coca cola':
+            case 'cola':
+                this.cocaCola += quantity;
+                break;
+            default:
+                console.log(`Product ${product} not recognized.`);
+        }
+    }
 }
 
 
-const result = haveSameLetters("mitgroup", "gmtiprou");
-console.log(result);  
+
+const shop = new Shop(4, 5, 2);
+
+console.log(shop.residue());
+shop.selling('bread', 4);    
+
+shop.receive('cola', 2);     
+
+console.log(shop.residue()); 
+
+
+
+//C TASK
+// function haveSameLetters(str1, str2) {
+   
+//     const sortString = str => str.split('').sort().join('');
+
+   
+//     return sortString(str1) === sortString(str2);
+// }
+
+
+// const result = haveSameLetters("mitgroup", "gmtiprou");
+// console.log(result);  
 
 
 
