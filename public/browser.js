@@ -31,8 +31,9 @@ document.getElementById("create-form").addEventListener("submit", function (e) {
                 .getElementById("item-list")
                 .insertAdjacentHTML("beforeend", 
                 itemTemplate(response.data));
-            createField.value = "";
+            createField.value = "",
             createField.focus();
+            document.location.reload();
         })
         .catch((err) => {
             console.error("Error in /create-item:", err); // Debug log
