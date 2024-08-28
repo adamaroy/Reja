@@ -8,7 +8,6 @@
     "dev": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "train": "nodemon train.js"
-    
   },
   "author": "ADAM",
   "license": "ISC",
@@ -19,7 +18,6 @@
     "ejs": "^3.1.10",
     "express": "^4.19.2",
     "mongodb": "^3.2.6",
-    
     "nodemon": "^3.1.4"
   }
 }

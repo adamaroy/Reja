@@ -14,6 +14,8 @@ const fs = require("fs");
 //     }
 // });
 
+
+
 // MongoDB chaqirish
 const db = require("./server").db();
 const mongodb = require("mongodb");
@@ -112,6 +114,9 @@ app.get("/", (req, res) => { // get databasedan malumot olib oqish uchun ishlata
         }
     });
 });
+
+
+
 
 // app.get('/author', (req, res) => {
 //     console.log("GET request to /author"); // Debug log
