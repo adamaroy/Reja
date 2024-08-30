@@ -1,83 +1,96 @@
-//D TASK 
-class Shop {
-    constructor(bread, spaghetti, cocaCola) {
-        this.bread = bread;
-        this.spaghetti = spaghetti;
-        this.cocaCola = cocaCola;
-    }
+//ETASK
 
-    logAction(action) {
-        const now = new Date();
-        const time = now.toTimeString().split(' ')[0]; // Get the time in HH:MM:SS format
-        console.log(`Action: ${action} at ${time}`);
-    }
-
-    residue() {
-        this.logAction('Checking residue');
-        return `Current stock: ${this.bread} bread, ${this.spaghetti} spaghetti, and ${this.cocaCola} Coca-Cola!`;
-    }
-
-    selling(product, quantity) {
-        this.logAction(`Selling ${quantity} ${product}`);
-
-        switch (product.toLowerCase()) {
-            case 'bread':
-                if (this.bread >= quantity) {
-                    this.bread -= quantity;
-                } else {
-                    console.log('Not enough bread in stock!');
-                }
-                break;
-            case 'spaghetti':
-                if (this.spaghetti >= quantity) {
-                    this.spaghetti -= quantity;
-                } else {
-                    console.log('Not enough spaghetti in stock!');
-                }
-                break;
-            case 'coca cola':
-            case 'cola':
-                if (this.cocaCola >= quantity) {
-                    this.cocaCola -= quantity;
-                } else {
-                    console.log('Not enough Coca-Cola in stock!');
-                }
-                break;
-            default:
-                console.log(`Product ${product} not available.`);
-        }
-    }
-
-    receive(product, quantity) {
-        this.logAction(`Receiving ${quantity} ${product}`);
-
-        switch (product.toLowerCase()) {
-            case 'bread':
-                this.bread += quantity;
-                break;
-            case 'spaghetti':
-                this.spaghetti += quantity;
-                break;
-            case 'coca cola':
-            case 'cola':
-                this.cocaCola += quantity;
-                break;
-            default:
-                console.log(`Product ${product} not recognized.`);
-        }
-    }
+function getReverse(str) {
+    
+    return str.split('').reverse().join('');
 }
 
+const inputString = "adam";
+const reversedString = getReverse(inputString);
+
+console.log(reversedString); 
 
 
-const shop = new Shop(4, 5, 2);
+//D TASK 
+// class Shop {
+//     constructor(bread, spaghetti, cocaCola) {
+//         this.bread = bread;
+//         this.spaghetti = spaghetti;
+//         this.cocaCola = cocaCola;
+//     }
 
-console.log(shop.residue());
-shop.selling('bread', 4);    
+//     logAction(action) {
+//         const now = new Date();
+//         const time = now.toTimeString().split(' ')[0]; // Get the time in HH:MM:SS format
+//         console.log(`Action: ${action} at ${time}`);
+//     }
 
-shop.receive('cola', 2);     
+//     residue() {
+//         this.logAction('Checking residue');
+//         return `Current stock: ${this.bread} bread, ${this.spaghetti} spaghetti, and ${this.cocaCola} Coca-Cola!`;
+//     }
 
-console.log(shop.residue()); 
+//     selling(product, quantity) {
+//         this.logAction(`Selling ${quantity} ${product}`);
+
+//         switch (product.toLowerCase()) {
+//             case 'bread':
+//                 if (this.bread >= quantity) {
+//                     this.bread -= quantity;
+//                 } else {
+//                     console.log('Not enough bread in stock!');
+//                 }
+//                 break;
+//             case 'spaghetti':
+//                 if (this.spaghetti >= quantity) {
+//                     this.spaghetti -= quantity;
+//                 } else {
+//                     console.log('Not enough spaghetti in stock!');
+//                 }
+//                 break;
+//             case 'coca cola':
+//             case 'cola':
+//                 if (this.cocaCola >= quantity) {
+//                     this.cocaCola -= quantity;
+//                 } else {
+//                     console.log('Not enough Coca-Cola in stock!');
+//                 }
+//                 break;
+//             default:
+//                 console.log(`Product ${product} not available.`);
+//         }
+//     }
+
+//     receive(product, quantity) {
+//         this.logAction(`Receiving ${quantity} ${product}`);
+
+//         switch (product.toLowerCase()) {
+//             case 'bread':
+//                 this.bread += quantity;
+//                 break;
+//             case 'spaghetti':
+//                 this.spaghetti += quantity;
+//                 break;
+//             case 'coca cola':
+//             case 'cola':
+//                 this.cocaCola += quantity;
+//                 break;
+//             default:
+//                 console.log(`Product ${product} not recognized.`);
+//         }
+//     }
+// }
+
+
+
+// const shop = new Shop(4, 5, 2);
+
+// console.log(shop.residue());
+// shop.selling('bread', 4);    
+
+// shop.receive('cola', 2);     
+
+// console.log(shop.residue()); 
 
 
 
