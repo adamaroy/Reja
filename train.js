@@ -1,14 +1,47 @@
-//ETASK
+//F TASK
+function findDoublers(str) {
+   
+    const findLetter = new Set();
 
-function getReverse(str) {
-    
-    return str.split('').reverse().join('');
+
+
+    for (let i = 0; i < str.length; i++) {
+       
+        if (findLetter.has(str[i])) {
+            return true;
+        }
+       
+        findLetter.add(str[i]);
+    }
+
+   
+    return false;
 }
 
-const inputString = "adam";
-const reversedString = getReverse(inputString);
 
-console.log(reversedString); 
+
+console.log(findDoublers("hello")); 
+
+console.log(findDoublers("world")); 
+
+console.log(findDoublers("MITSILA")); 
+
+
+
+
+
+
+//ETASK
+
+// function getReverse(str) {
+    
+//     return str.split('').reverse().join('');
+// }
+
+// const inputString = "adam";
+// const reversedString = getReverse(inputString);
+
+// console.log(reversedString); 
 
 
 //D TASK 
